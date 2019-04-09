@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "jess": "^0.0.0"
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jess": "^0.0.0",
+    "react-test-renderer": "^16.8.6"
   },
   "name": "webtesting-ii-challenge",
   "version": "1.0.0",
