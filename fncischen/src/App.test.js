@@ -21,7 +21,14 @@ describe('<App/>', () => {
     render(<App/>, div);
   })
 
-  it("renders Hello World", () => {
-    
+  it('check balls', () => {
+    const { getByText } = render(<Display balls="0"/>)
+    const balls = getByText('balls')
   })
+
+  it('check strikes', () => {
+    const { getByText } = render(<Display strikes="0"/>)
+    const balls = getByText('strikes')
+  })
+
 });

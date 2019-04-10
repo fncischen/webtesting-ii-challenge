@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class Dashboard extends Component {
     
-    constructor(){
+    constructor(props){
+        super(props);
     }
 
     render(){
@@ -14,7 +15,6 @@ export default class Dashboard extends Component {
             <button type="submit" onClick={this.props.onFoul}>Foul</button>
             <button type="submit" onClick={this.props.onBall}>Ball</button>
             <button type="submit" onClick={this.props.onHit}>Hit</button>
-            </form>
 
             </div>
         )

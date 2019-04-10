@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import Dashboard from './Components/Dashboard';
+import Dashboard from './Components/Dashboard.js';
+import Display from "./Components/Display.js"
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
+    super(props);
     this.state ={
       balls: 0,
       strikes: 0
-    }
+    };
   }
 
   onHit = e => {
@@ -22,18 +23,19 @@ class App extends Component {
   }
 
   onBall = e => {
-    this.setState({balls: this.state.ball + 1});
+    this.setState({balls: this.state.balls + 1});
   }
 
   onFoul = e => {
     this.setState({strikes: this.state.strikes += 2});
   }
 
-  onComponentDidMount() {
-    if(this.state.strikes == 3) {
+  componentDidUpdate() {
+    if(this.state.strikes >= 3 || this.state.balls == 3) {
       this.setState({balls: 0, strikes: 0})
       console.log("Three strikes and you're out!")
     }
+
   }
 
   render() {
