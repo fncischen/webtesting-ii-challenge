@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 export default class Display extends Component {
     constructor(){
-        this.state = {
-            balls: 0,
-            strikes: 0
-        }
     }
 
     render(){
@@ -13,8 +9,8 @@ export default class Display extends Component {
             <div className="Display">
             
             <ul>
-            <li><b>Balls:</b> {this.state.balls}</li>
-            <li><b>Strikes:</b>{this.state.strikes}</li>
+            <li><b>Balls:</b> {this.props.balls}</li>
+            <li><b>Strikes:</b>{this.props.strikes}</li>
             
             </ul>
             </div>
