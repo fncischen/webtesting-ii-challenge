@@ -13,9 +13,20 @@ class App extends Component {
     }
   }
 
-  onSubmit = e => {
-    const targetValue = [e.target.value] + 1;
-    this.setState({[e.target.name]: targetValue});
+  onHit = e => {
+    this.setState({balls: 0, strikes: 0});
+  }
+
+  onStrike = e => {
+    this.setState({strikes: this.state.strikes + 1});
+  }
+
+  onBall = e => {
+    this.setState({balls: this.state.ball + 1});
+  }
+
+  onFoul = e => {
+    this.setState({strikes: this.state.strikes += 2});
   }
 
   onComponentDidMount() {
@@ -29,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
           <Display balls={this.state.balls} strikes={this.state.strikes}/>
-          <Dashboard onSubmit={this.onSubmit}/>
+          <Dashboard onHit={this.onHit} onStrike={this.onStrike} onBall={this.onBall} onFoul={this.onFoul}/>
       </div>
     );
   }

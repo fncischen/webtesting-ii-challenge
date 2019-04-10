@@ -9,15 +9,11 @@ export default class Dashboard extends Component {
         return(
             
             <div className="Dashboard">
-            
-            <form onSubmit={() => this.props.onSubmit}>
-            <input type="text" name="balls"></input>
-            <button type="submit">Update Balls</button>
-            </form>
-
-            <form onSubmit={() => this.props.onSubmit}>
-            <input type="text" name="strikes"></input>
-            <button type="submit">Update Strikes</button>
+            <h2>Dashboard</h2>
+            <button type="submit" onClick={this.props.onStrike}>Strike</button>
+            <button type="submit" onClick={this.props.onFoul}>Foul</button>
+            <button type="submit" onClick={this.props.onBall}>Ball</button>
+            <button type="submit" onClick={this.props.onHit}>Hit</button>
             </form>
 
             </div>
