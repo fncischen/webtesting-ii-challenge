@@ -13,15 +13,23 @@ class App extends Component {
     }
   }
 
-  onChange = e => {
-    this.setState({[e.target.name]: [e.target.value]});
+  onSubmit = e => {
+    const targetValue = [e.target.value] + 1;
+    this.setState({[e.target.name]: targetValue});
+  }
+
+  onComponentDidMount() {
+    if(this.state.strikes == 3) {
+      this.setState({balls: 0, strikes: 0})
+      console.log("Three strikes and you're out!")
+    }
   }
 
   render() {
     return (
       <div className="App">
           <Display balls={this.state.balls} strikes={this.state.strikes}/>
-          <Dashboard onSubmit={this.onChange}/>
+          <Dashboard onSubmit={this.onSubmit}/>
       </div>
     );
   }
