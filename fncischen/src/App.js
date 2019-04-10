@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import Dashboard from './Components/Dashboard';
 
 class App extends Component {
   constructor() {
@@ -13,14 +14,14 @@ class App extends Component {
   }
 
   onChange = e => {
-
+    this.setState({[e.target.name]: [e.target.value]});
   }
 
   render() {
     return (
       <div className="App">
-          <Router path="/" Component={Display}/>
-          <Router path="/dashboard" Component={Dashboard}/>
+          <Display balls={this.state.balls} strikes={this.state.strikes}/>
+          <Dashboard onSubmit={this.onChange}/>
       </div>
     );
   }
